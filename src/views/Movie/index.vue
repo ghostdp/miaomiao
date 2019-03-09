@@ -13,12 +13,14 @@
                     <router-link tag="div" to="/movie/search" class="search_entry">
                         <i class="iconfont icon-sousuo"></i>
                     </router-link>
+                    
                 </div>
                 <keep-alive>
                     <router-view />
                 </keep-alive>
             </div>
         <TabBar />
+        <router-view name="detail" />
     </div>
 </template>
 
@@ -76,4 +78,14 @@ export default {
 .movie_menu .search_entry.active{ color: #ef4238; border-bottom: 2px #ef4238 solid;}
 .movie_menu .search_entry.router-link-active{ color: #ef4238; border-bottom: 2px #ef4238 solid;}
 .movie_menu .search_entry i{  font-size:24px; color:red;}
+
+.slide-enter-active{ animation : 13s detailMove;}
+@keyframes detailMove{
+	0%{
+		transform : translateX(100%);
+	}
+	100%{
+		transform : translateX(0);
+	}
+}
 </style>
